@@ -9,7 +9,7 @@ interface DispatchProps {
   setOrganizationId: typeof setOrganizationId;
   setRepoId: typeof setRepoId;
   clearIssues: typeof clearIssues;
-}
+};
 
 type Props = DispatchProps;
 

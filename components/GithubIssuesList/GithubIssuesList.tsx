@@ -36,44 +36,46 @@ const GithubIssuesListRaw: React.FC<Props> = props => {
     <View>
       {status === LOAD_STATUS_LOADING ? (
         <View style={style.loading}>
-        <ActivityIndicator color={'#00aaff'} />
-      </View>
+          <ActivityIndicator color={'lightBlue'} />
+        </View>
       ) : (
-        <FlatList
-          data={issues}
-          keyExtractor={(item) => item.id + ''}
-          contentContainerStyle={style.issuesContainer}
-          renderItem={({ item }) => (
-            <GithubIssueItem
-              issue={item}
-              // navigation={props.navigation}
-            />
-          )}
-        />
+        <View>
+          <FlatList
+            data={issues}
+            keyExtractor={(item) => item.id + ''}
+            contentContainerStyle={style.issuesContainer}
+            renderItem={({ item }) => (
+              <GithubIssueItem
+                issue={item}
+                // navigation={props.navigation}
+              />
+            )}
+          />
+        </View>
+
       )}
 
-      <View pointerEvents="box-none" style={style.paginationButtons}>
-        <TouchableOpacity
-          style={{ width: 120 }}
-          disabled={currentPage < 2}
-          onPress={() => {
-            props.setPage(currentPage - 1);
-            githubApi.getIssues();
-          }}
-        >
-          <Text style={style.buttonText}>{'Previous'}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          testID="nextPageButton"
-          style={{ width: 120 }}
-          onPress={() => {
-            props.setPage(currentPage + 1);
-            githubApi.getIssues();
-          }}
-        >
-          <Text style={style.buttonText}>{'Next'}</Text>
-        </TouchableOpacity>
-      </View>
+      {issues.length ? (
+        <View style={style.paginationButtons}>
+          <TouchableOpacity
+            disabled={currentPage < 2}
+            onPress={() => {
+              props.setPage(currentPage - 1);
+              githubApi.getIssues();
+            }}
+          >
+            <Text style={[style.buttonText, currentPage < 2 && style.disableText]}>{'Previous'}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              props.setPage(currentPage + 1);
+              githubApi.getIssues();
+            }}
+          >
+            <Text style={style.buttonText}>{'Next'}</Text>
+          </TouchableOpacity>
+        </View>
+      ) : null}
     </View>
   );
 };

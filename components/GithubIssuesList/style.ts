@@ -21,15 +21,21 @@ export const style = StyleSheet.create({
   paginationButtons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     position: 'absolute',
-    bottom: 0,
+    bottom: 20,
     left: 0,
+    right: 0,
+    width: '100%',
     paddingHorizontal: 16,
+    alignSelf: 'center',
   },
   buttonText: {
     color: 'blue',
-    fontSize: 12,
-    fontFamily: 'muli-extra-bold',
-    letterSpacing: 0.8,
+    fontSize: 14,
+    fontFamily: 'bold',
+  },
+  disableText: {
+    color: 'grey',
   },
 });
