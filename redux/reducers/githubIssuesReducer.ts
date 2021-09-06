@@ -12,7 +12,7 @@ export interface GlobalIssuesState {
   currentPage: number;
 }
 
-const initState: GlobalIssuesState = {
+export const initState: GlobalIssuesState = {
   issues: [],
   loading: false,
   organizationId: '',
