@@ -4,10 +4,13 @@ export const style = StyleSheet.create({
   searchCont: {
     flex: 1,
     padding: 10,
+    marginTop: 30,
+    maxHeight: 230,
+    borderBottomWidth: 1,
+    borderBottomColor: 'grey',
   },
-  inputs: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  inputCont: {
+    marginBottom: 10,
   },
   input: {
     width: '100%',

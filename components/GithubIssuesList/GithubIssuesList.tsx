@@ -33,7 +33,7 @@ const GithubIssuesListRaw: React.FC<Props> = props => {
   }
 
   return (
-    <View>
+    <View style={{flex:1}}>
       {status === LOAD_STATUS_LOADING ? (
         <View style={style.loading}>
           <ActivityIndicator color={'lightBlue'} />
@@ -59,6 +59,7 @@ const GithubIssuesListRaw: React.FC<Props> = props => {
         <View style={style.paginationButtons}>
           <TouchableOpacity
             disabled={currentPage < 2}
+            style={style.button}
             onPress={() => {
               props.setPage(currentPage - 1);
               githubApi.getIssues();
@@ -67,6 +68,7 @@ const GithubIssuesListRaw: React.FC<Props> = props => {
             <Text style={[style.buttonText, currentPage < 2 && style.disableText]}>{'Previous'}</Text>
           </TouchableOpacity>
           <TouchableOpacity
+            style={style.button}
             onPress={() => {
               props.setPage(currentPage + 1);
               githubApi.getIssues();

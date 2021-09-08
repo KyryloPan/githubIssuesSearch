@@ -30,8 +30,8 @@ const SearchRaw: React.FC<Props> = (props) => {
 
   return (
     <View style={style.searchCont}>
-      <View style={style.inputs}>
-        <View>
+      <>
+        <View style={style.inputCont}>
           <Text>Organization:</Text>
           <TextInput
             value={organizationInputVal}
@@ -42,7 +42,7 @@ const SearchRaw: React.FC<Props> = (props) => {
             onBlur={() => setIsFocused(false)}
           />
         </View>
-        <View>
+        <View style={style.inputCont}>
           <Text>Repository:</Text>
           <TextInput
             value={repoIdInputVal}
@@ -53,7 +53,7 @@ const SearchRaw: React.FC<Props> = (props) => {
             onBlur={() => setIsFocused(false)}
           />
         </View>
-      </View>
+      </>
 
       <View style={style.buttonsCont}>
         <Button

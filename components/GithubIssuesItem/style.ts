@@ -35,6 +35,5 @@ export const style = StyleSheet.create({
   },
   labelText: {
     fontSize: 12,
-    fontFamily: 'muli-semi-bold',
   },
 });

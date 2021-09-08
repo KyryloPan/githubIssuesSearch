@@ -30,6 +30,16 @@ export const style = StyleSheet.create({
     paddingHorizontal: 16,
     alignSelf: 'center',
   },
+  button: {
+    borderWidth: 1,
+    borderColor: 'grey',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 100,
+    height: 50,
+    backgroundColor: '#fff',
+    borderRadius: 50,
+  },
   buttonText: {
     color: 'blue',
     fontSize: 14,
